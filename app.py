@@ -42,7 +42,7 @@ lr_model, rf_model, lr_acc, rf_acc, X_train = train_models(heart_df)
 st.sidebar.header('Patient Data')
 
 def user_input_features():
-    age = st.sidebar.slider('Age', 29, 77, 50)
+    age = st.sidebar.slider('Age', 1, 100, 1)
     sex = st.sidebar.selectbox('Sex', ['Female', 'Male'])
     cp = st.sidebar.selectbox('Chest Pain Type', ['Typical Angina', 'Atypical Angina', 'Non-anginal Pain', 'Asymptomatic'])
     trestbps = st.sidebar.slider('Resting Blood Pressure', 94, 200, 120)
@@ -135,3 +135,4 @@ with tab3:
         st.metric(label="Random Forest Accuracy", value=f"{rf_acc:.2%}")
 
     st.write("Random Forest typically performs better on complex datasets as it captures non-linear relationships.")
+
